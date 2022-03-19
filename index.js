@@ -2,7 +2,7 @@ const cool = require("cool-ascii-faces");
 const express = require("express");
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.get("/", (Req,res)=>{
     console.log("Requested / route");
@@ -10,6 +10,6 @@ app.get("/", (Req,res)=>{
 });
 
 app.listen(port, () => {
-    console.log(`Server TRULY ready at port ${port}`);
+    console.log(`Server ready at port ${port}`);
 });
 
