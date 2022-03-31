@@ -1,11 +1,13 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+const backend = require("./src/back_ferparbel");
 
 const app = express();
-const port = process.env.PORT || 8080;
 
-app.get("/api", (Req,res)=>{
-    res.send({  result: true});
-});
+backend(app);
+
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
     console.log(`Server ready at port ${port}`);
